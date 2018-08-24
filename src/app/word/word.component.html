@@ -1,0 +1,20 @@
+<div *ngIf="showMe">
+<p [ngStyle]="{
+          'color':color,
+          'font-family': myFont,
+          'font-size': mySize
+          }
+" >
+  word works!
+</p>
+<select class="form-control" name="font" #monFont (change)="changeFont(monFont.value)">
+  <option value="Garamond">Garamond</option>
+  <option value="Verdana">Verdana</option>
+  <option value="Times New Roman">Times New Roman</option>
+</select>
+<input class="form-control" type="text" #couleur (change)="changeColor(couleur.value)">
+
+<input class="form-control"  type="number" #taille (change)="changeSize(taille.value)">
+</div>
+
+<input class="btn btn-primary" type="button" value="Hide Me" #showButton (click)="showHide(showButton)">
